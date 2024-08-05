@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Appetit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Boldina:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Logo de la empresa" class="logo">
+            <nav>
+                <a href="#inicio">INICIO</a>
+                <a href="#acerca">ACERCA DE</a>
+                <a href="#menu">MENÚ</a>
+                <a href="#instagram">INSTAGRAM</a>
+                <a href="#whatsapp">WHATSAPP</a>
+            </nav>
+        </div>
+    </header>
+    <h1>Bienvenidos a Bon Appetit</h1>
+    <IMG src = "bonappetit.png" alt = "bonappetit" width="100%">
+    <!-- Banner -->
+    <section id="inicio" class="banner">
+        <div class="banner-text">
+            <h1>¡Bienvenidos a Bon Appetit!</h1>
+            <p>Disfruta de las mejores tortas, galletas y brownies en tu celebración.</p>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="menu" class="productos">
+        <h2>Nuestros productos</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="tortas.jpg" alt="Tortas">
+                <h3>Tortas</h3>
+                <p>Deliciosas tortas para cualquier ocasión, elaboradas con ingredientes frescos.</p>
+            </div>
+            <div class="product-item">
+                <img src="galletas.jpg" alt="Galletas">
+                <h3>Galletas</h3>
+                <p>Galletas crujientes y suaves, perfectas para acompañar cualquier bebida.</p>
+            </div>
+            <div class="product-item">
+                <img src="brownies.jpg" alt="Brownies">
+                <h3>Brownies</h3>
+                <p>Brownies con la textura ideal y el chocolate más intenso para los amantes del dulce.</p>
+            </div>
+        </div>
+    </section>>
+
+    <!-- Cómo ordenar -->
+    <section id="whatsapp" class="ordenar">
+        <h2>Cómo ordenar</h2>
+        <form id="order-form">
+            <label for="producto">1. Elige el producto:</label>
+            <select id="producto" name="producto" required>
+                <option value="tortas">Tortas</option>
+                <option value="galletas">Galletas</option>
+                <option value="brownies">Brownies</option>
+            </select>
+
+            <label for="masa">2. Elige el sabor de la masa y relleno:</label>
+            <select id="masa" name="masa" required>
+                <option value="chocolate">Chocolate</option>
+                <option value="vainilla">Vainilla</option>
+                <option value="fresa">Fresa</option>
+            </select>
+
+            <label for="crema">3. Elige crema:</label>
+            <select id="crema" name="crema" required>
+                <option value="chocolate">Chocolate</option>
+                <option value="vainilla">Vainilla</option>
+                <option value="fresa">Fresa</option>
+            </select>
+
+            <label for="foto">4. Subir una foto del diseño:</label>
+            <input type="file" id="foto" name="foto">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bon Appetit. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
