@@ -71,8 +71,8 @@ nav a:hover {
 }
 
 .product-item img {
-    width: 200px;
-    height: 150px;
+    width: 250px;
+    height: 500px;
     object-fit: cover;
 }
 
