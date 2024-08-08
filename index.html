@@ -11,7 +11,7 @@
     <!-- Barra de navegación -->
     <header>
         <div class="container">
-            <img src="logo.png" alt="Logo de la empresa" class="logo">
+            <img src="logo.jpg" alt="Logo de la empresa" class="logo">
             <nav>
                 <a href="#inicio">INICIO</a>
                 <a href="#acerca">ACERCA DE</a>
@@ -21,73 +21,112 @@
             </nav>
         </div>
     </header>
-    <h1>Bienvenidos a Bon Appetit</h1>
+    
     <IMG src = "bonappetit.png" alt = "bonappetit" width="100%">
     <!-- Banner -->
     <section id="inicio" class="banner">
         <div class="banner-text">
-            <h1>¡Bienvenidos a Bon Appetit!</h1>
-            <p>Disfruta de las mejores tortas, galletas y brownies en tu celebración.</p>
         </div>
     </section>
-
+    <h1>¡Bienvenidos a Bon Appetit!</h1>
+    <p>Disfruta de las mejores tortas, galletas y brownies en tus celebraciones especiales</p>
+   
     <!-- Productos -->
     <section id="menu" class="productos">
         <h2>Nuestros productos</h2>
         <div class="product-grid">
             <div class="product-item">
-                <img src="tortas.jpg" alt="Tortas">
+                <img src="tortas.png" alt="Tortas">
                 <h3>Tortas</h3>
-                <p>Deliciosas tortas para cualquier ocasión, elaboradas con ingredientes frescos.</p>
+                <p>Deliciosas tortas artesanales para cualquier ocasión, elaboradas con ingredientes de primera calidad.</p>
             </div>
             <div class="product-item">
-                <img src="galletas.jpg" alt="Galletas">
-                <h3>Galletas</h3>
-                <p>Galletas crujientes y suaves, perfectas para acompañar cualquier bebida.</p>
+                <img src="galletas.png" alt="Galletas">
+                <h3>Bon Cookies</h3>
+                <p>Galletas tipo NY crujientes por fuera y suaves por dentro, perfectas para acompañar cualquier bebida.</p>
             </div>
             <div class="product-item">
-                <img src="brownies.jpg" alt="Brownies">
+                <img src="brownies.png" alt="Brownies">
                 <h3>Brownies</h3>
-                <p>Brownies con la textura ideal y el chocolate más intenso para los amantes del dulce.</p>
+                <p>Brownies melcochudos con la textura ideal y el chocolate más intenso para deleitar tu paladar.</p>
             </div>
         </div>
-    </section>>
+    </section>
 
     <!-- Cómo ordenar -->
     <section id="whatsapp" class="ordenar">
         <h2>Cómo ordenar</h2>
+        <h4>Recuerda hacer tu pedido con 3 días de anticipación</h4>
+
         <form id="order-form">
             <label for="producto">1. Elige el producto:</label>
             <select id="producto" name="producto" required>
                 <option value="tortas">Tortas</option>
-                <option value="galletas">Galletas</option>
+                <option value="galletas">Bon Cookies</option>
                 <option value="brownies">Brownies</option>
             </select>
 
-            <label for="masa">2. Elige el sabor de la masa y relleno:</label>
+            <label for="tamano">2. Elige el tamaño:</label>
+            <select id="tamano" name="tamano" required>
+                <option value="Personal personalizada">Personal (máx. 2 personas)</option>
+                <option value="1/4 de libra (8 a 10 porciones)">1/4 de libra (8 a 10 porciones)</option>
+                <option value="1/2 libra (15 a 18 porciones)">1/2 libra (15 a 18 porciones)</option>
+                <option value="1 libra (30 a 35 porciones)">1 libra (30 a 35 porciones)</option>
+            </select>
+
+            <label for="masa">3. Elige el sabor de la masa:</label>
             <select id="masa" name="masa" required>
-                <option value="chocolate">Chocolate</option>
                 <option value="vainilla">Vainilla</option>
-                <option value="fresa">Fresa</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="tres leches">Tres leches</option>
+                <option value="vainilla - oreo">Vainilla - Oreo</option>
+                <option value="semillas de amapola">Semillas de Amapola</option>
+                <option value="Zanahoria">Zanahoria y nueces</option>
+                <option value="red velvet">Red velvet</option>
+                <option value="Vainilla con arandanos">Vainilla con arándanos</option>
             </select>
 
-            <label for="crema">3. Elige crema:</label>
+            <label for="relleno">4. Elige el relleno:</label>
+            <select id="relleno" name="relleno" required>
+                <option value="frutos rojos">Frutos rojos</option>
+                <option value="frosting de queso">Frosting de queso</option>
+                <option value="arequipe">Arequipe</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="bariloche chocolate+arequipe">Bariloche (chocolate+arequipe)</option>
+                <option value="maracuya">Maracuyá</option>
+                <option value="queso crema">Queso crema</option>
+                <option value="frutos amarillos">Frutos amarillos</option>
+            </select>
+
+            <label for="crema">5. Elige crema:</label>
             <select id="crema" name="crema" required>
-                <option value="chocolate">Chocolate</option>
-                <option value="vainilla">Vainilla</option>
-                <option value="fresa">Fresa</option>
+                <option value="chocolate">Chantilly</option>
+                <option value="vainilla">Frosting de queso</option>
+                <option value="fresa">Sin cubierta</option>
             </select>
 
-            <label for="foto">4. Subir una foto del diseño:</label>
+            <label for="foto">6. Subir una foto del diseño:</label>
             <input type="file" id="foto" name="foto">
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Cotizar</button>
         </form>
     </section>
 
+    <!-- Sección de Llamado a la Acción -->
+<section id="cta" class="cta">
+    <div class="cta-content">
+        <img src="magia.png" alt="Magia" class="cta-image">
+        <div class="cta-text">
+            <h2>¿Estás listo para probar la magia hecha torta?</h2>
+            <p>Descubre nuestras tortas artesanales y déjate sorprender por su sabor único.</p>
+        </div>
+    </div>
+</section>
+
+    
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Bon Appetit. Todos los derechos reservados.</p>
+        <p>&copy; Bon Appetit - ¡Felicidad en una caja! </p>
     </footer>
 
     <script src="scripts.js"></script>
