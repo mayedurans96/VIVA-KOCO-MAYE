@@ -3,12 +3,13 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #da68bde0;
+    color: #FC7CB8;
+    text-align: center
 }
 
 /* Barra de navegación */
 header {
-    background-color: #003366; /* Azul marino */
+    background-color: #0a0689; /* Azul marino */
     color: #fff;
     padding: 10px 0;
 }
@@ -21,7 +22,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 80px;
     border: 1px;
     border-radius: 50%;
 }
@@ -37,14 +38,46 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Banner */
+/* Define la animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Define la animación de desvanecimiento */
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplica la animación a la imagen */
+.fade-in-image {
+    opacity: 0; /* Inicialmente transparente */
+    animation: fadeInImage 2s ease-in-out forwards; /* Animación de desvanecimiento */
+}
+
+
+/* Aplica la animación a la sección del banner */
 .banner {
-    background-image: url('banner.jpg'); /* Banner imagen */
+    background-image: url('bonappetit.PNG'); /* Banner imagen */
     background-size: cover;
     color: #fff;
-
     text-align: center;
+    opacity: 0; /* Inicialmente transparente */
+    animation: fadeIn 2s ease-in-out forwards; /* Animación de desvanecimiento */
 }
+
+
+.banner.visible {
+    opacity: 1; /* Hacer el banner completamente visible */
+  }
 
 .banner-text h1 {
     font-family: 'Boldina', serif;
@@ -52,12 +85,13 @@ nav a:hover {
 }
 
 .banner-text p {
-    font-size: 1.2em;
+    font-size: 2.5em;
 }
+
 
 /* Productos */
 .productos {
-    padding: 40px 20px;
+    padding: 40px 20px;    
 }
 
 .product-grid {
@@ -71,14 +105,17 @@ nav a:hover {
 }
 
 .product-item img {
-    width: 250px;
-    height: 500px;
+    width: 235px;
+    height: 460px;
     object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 200px; 
+    border-top-right-radius: 200px; 
 }
 
 .product-item h3 {
     font-family: 'Boldina', serif;
-    color: #003366; /* Azul marino */
+    color: #0A0689; /* Azul marino */
 }
 
 .product-item p {
@@ -87,8 +124,10 @@ nav a:hover {
 
 /* Cómo ordenar */
 .ordenar {
-    background-color: #e0f7fa; /* Cian */
+    background-color: #c3eafa; /* Cian */
     padding: 20px;
+    text-align: center;
+    
 }
 
 form {
@@ -100,28 +139,83 @@ label {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
+    text-align: left;
+    
 }
 
 select, input[type="file"], button {
+    color: #0A0689; 
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(236, 128, 194, 0.397); /* Sombra suave */
+    font-size: 15px;
+    transition: all 0.3s ease; /* Efecto de transición */
 }
 
 button {
-    background-color: #003366; /* Azul marino */
+    font-family: 'Roboto', sans-serif;
+    background-color: #0A0689; /* Azul marino */
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px; 
+    padding: 10px 20px;    
 }
 
 button:hover {
-    background-color: #002244; /* Azul marino más oscuro */
+    background-color: #FC7CB8; 
 }
+
+/* Sección de Llamado a la Acción */
+.cta {
+    background-color: #0A0689; /* Fondo blanco para resaltar el contenido */
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ffffff; /* Borde azul marino */
+    border-top-left-radius: 250px; 
+    border-top-right-radius: 250px;
+    background: #FC7CB8; /* Fondo blanco con transparencia */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.cta-image {
+    width: 400px; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    margin-bottom: 0px;
+}
+
+.cta-text h2 {
+    font-family: 'Boldina', serif;
+    font-size: 1.8em;
+    color: #0a0689; /* Azul marino */
+    margin: 0 0 10px;
+}
+
+.cta-text p {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin: 0;
+}
+
 
 /* Footer */
 footer {
-    background-color: #003366; /* Azul marino */
+    background-color: #0A0689; /* Azul marino */
     color: #fff;
     text-align: center;
     padding: 10px 0;
