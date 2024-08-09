@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const productoSelect = document.getElementById('producto');
-    const opcionesTortas = document.getElementById('opciones-tortas');
-    const opcionesGalletas = document.getElementById('opciones-galletas');
+    const tamanoSelect = document.getElementById('tamano');
+    const masaSelect = document.getElementById('masa');
+    const rellenoSelect = document.getElementById('relleno');
+    const cremaSelect = document.getElementById('crema');
+    const fotoInput = document.getElementById('foto');
+    const cantidadInput = document.getElementById('cantidad');
+    const saborInput = document.getElementById('sabor');
+    const rellenoGalletasBrowniesInput = document.getElementById('relleno-galletas-brownies');
+    const tortasOptions = document.getElementById('tortas-options');
+    const galletasBrowniesOptions = document.getElementById('galletas-brownies-options');
+    const form = document.getElementById('order-form');
 
+    // Define las opciones para cada producto
     const opciones = {
         tortas: {
             tamano: [
@@ -38,44 +48,41 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         galletas: {
-            sabor: [
-                "Vainilla",
-                "Chocolate",
-                "Oreo"
-            ],
-            cantidad: [
-                "Personal (máx. 2 personas)",
-                "1/4 de libra (8 a 10 porciones)"
-            ]
+            // No se necesitan opciones adicionales para galletas
+        },
+        brownies: {
+            // No se necesitan opciones adicionales para brownies
         }
     };
-    
-    // Evento que se dispara cuando se cambia el producto seleccionado
-    productoSelect.addEventListener('change', function() {
+
+    function actualizarOpciones() {
         const producto = productoSelect.value;
 
-        // Ocultar ambas secciones primero
-        opcionesTortas.style.display = 'none';
-        opcionesGalletas.style.display = 'none';
-
-        // Mostrar la sección correspondiente al producto seleccionado
         if (producto === 'tortas') {
-            opcionesTortas.style.display = 'block';
-            actualizarSelectOptions('tamano-torta', opciones.tortas.tamano);
-            actualizarSelectOptions('masa-torta', opciones.tortas.masa);
-            actualizarSelectOptions('relleno-torta', opciones.tortas.relleno);
-            actualizarSelectOptions('crema-torta', opciones.tortas.crema);
-        } else if (producto === 'galletas') {
-            opcionesGalletas.style.display = 'block';
-            actualizarSelectOptions('sabor-galletas', opciones.galletas.sabor);
-            actualizarSelectOptions('cantidad-galletas', opciones.galletas.cantidad);
-        }
-    });
+            // Mostrar opciones para tortas
+            tortasOptions.style.display = 'block';
+            galletasBrowniesOptions.style.display = 'none';
 
-    function actualizarSelectOptions(id, options) {
-        const selectElement = document.getElementById(id);
-        selectElement.innerHTML = ''; // Limpiar opciones anteriores
-        options.forEach(opcion => {
+            // Actualiza las opciones de tamaño, masa, relleno y crema según el producto seleccionado
+            actualizarSelect(tamanoSelect, opciones.tortas.tamano);
+            actualizarSelect(masaSelect, opciones.tortas.masa);
+            actualizarSelect(rellenoSelect, opciones.tortas.relleno);
+            actualizarSelect(cremaSelect, opciones.tortas.crema);
+        } else if (producto === 'galletas' || producto === 'brownies') {
+            // Mostrar opciones para galletas y brownies
+            tortasOptions.style.display = 'none';
+            galletasBrowniesOptions.style.display = 'block';
+        } else {
+            // Ocultar todas las opciones si no se selecciona ningún producto
+            tortasOptions.style.display = 'none';
+            galletasBrowniesOptions.style.display = 'none';
+        }
+    }
+
+    // Función para actualizar un select con un array de opciones
+    function actualizarSelect(selectElement, opcionesArray) {
+        selectElement.innerHTML = '<option value="">Selecciona una opción</option>'; // Limpiar y agregar opción por defecto
+        opcionesArray.forEach(opcion => {
             const optionElement = document.createElement('option');
             optionElement.value = opcion;
             optionElement.textContent = opcion;
@@ -83,31 +90,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Para manejar el envío del formulario y redirigir a WhatsApp
-    const form = document.getElementById('order-form');
+    // Actualiza las opciones cuando el producto cambia
+    productoSelect.addEventListener('change', actualizarOpciones);
+
+    // Maneja el envío del formulario
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
         const producto = productoSelect.value;
-        let mensaje = `Hola, quisiera hacer un pedido:\nProducto: ${producto}\n`;
+        let mensaje = `Hola, quisiera hacer un pedido:\nProducto: ${producto}`;
 
         if (producto === 'tortas') {
-            const tamano = document.getElementById('tamano-torta').value;
-            const masa = document.getElementById('masa-torta').value;
-            const relleno = document.getElementById('relleno-torta').value;
-            const crema = document.getElementById('crema-torta').value;
-            const foto = document.getElementById('foto').files[0];
+            const tamano = tamanoSelect.value;
+            const masa = masaSelect.value;
+            const relleno = rellenoSelect.value;
+            const crema = cremaSelect.value;
+            const foto = fotoInput.files[0];
 
-            mensaje += `Tamaño: ${tamano}\nMasa: ${masa}\nRelleno: ${relleno}\nCrema: ${crema}\nFoto del diseño: ${foto ? 'Sí' : 'No'}`;
-        } else if (producto === 'galletas') {
-            const sabor = document.getElementById('sabor-galletas').value;
-            const cantidad = document.getElementById('cantidad-galletas').value;
+            mensaje += `
+Tamano: ${tamano}
+Masa: ${masa}
+Relleno: ${relleno}
+Crema: ${crema}
+Foto del diseño: ${foto ? 'Sí' : 'No'}`;
+        } else if (producto === 'galletas' || producto === 'brownies') {
+            const cantidad = cantidadInput.value;
+            const sabor = saborInput.value;
+            const relleno = rellenoGalletasBrowniesInput.value;
 
-            mensaje += `Sabor: ${sabor}\nCantidad: ${cantidad}`;
+            mensaje += `
+Cantidad: ${cantidad}
+Sabor: ${sabor}
+Relleno: ${relleno}`;
         }
 
-        const numeroWhatsApp = '+573163679382';
+        // Reemplaza con tu número de WhatsApp Business
+        const numeroWhatsApp = '+573115026048';
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+        // Redirige al usuario a WhatsApp
         window.location.href = url;
     });
+
+    // Inicializa las opciones al cargar la página
+    actualizarOpciones();
 });

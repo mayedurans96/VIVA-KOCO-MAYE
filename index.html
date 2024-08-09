@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="styles.css"> <!-- Incluye el archivo CSS con el código anterior -->
 </head>
 <body>
-
     <!-- Barra de navegación -->
     <header>
         <div class="container">
@@ -21,7 +20,7 @@
                 <a href="#inicio">INICIO</a>
                 <a href="#acerca">ACERCA DE</a>
                 <a href="#menu">MENÚ</a>
-                <a href="https://www.instagram.com/bonappetitortas?igsh=MTlqejgyeTh3bGRjeQ==" target="_blank">INSTAGRAM</a>
+                <a href="#instagram">INSTAGRAM</a>
                 <a href="#whatsapp">WHATSAPP</a>
             </nav>
         </div>
@@ -34,7 +33,7 @@
         </div>
     </section>
     <p>Disfruta de las mejores tortas, galletas y brownies en tus celebraciones especiales</p>
-    <div class="separador">
+    <div class="banner">
         <h1>🍪¡Bienvenidos a Bon Appetit!🎂</h1>
       </div>
    
@@ -60,44 +59,48 @@
         </div>
     </section>
 
- <!-- Cómo ordenar -->
- <section id="whatsapp" class="ordenar">
+<!-- Cómo ordenar -->
+<section id="whatsapp" class="ordenar">
     <h2>Cómo ordenar</h2>
     <h4>Recuerda hacer tu pedido con 3 días de anticipación</h4>
 
     <form id="order-form">
         <label for="producto">1. Elige el producto:</label>
         <select id="producto" name="producto" required>
-            <option value="none">Seleccionar Producto</option>
+            <option value="">Selecciona un producto</option>
             <option value="tortas">Tortas</option>
             <option value="galletas">Bon Cookies</option>
+            <option value="brownies">Brownies</option>
         </select>
 
-        <div id="opciones-tortas" style="display: none;">
-            <label for="tamano-torta">2. Elige el tamaño:</label>
-            <select id="tamano-torta" name="tamano" required></select>
+        <div id="tortas-options" class="product-options">
+            <label for="tamano">2. Elige el tamaño:</label>
+            <select id="tamano" name="tamano" required></select>
 
-            <label for="masa-torta">3. Elige el sabor de la masa:</label>
-            <select id="masa-torta" name="masa" required></select>
+            <label for="masa">3. Elige el sabor de la masa:</label>
+            <select id="masa" name="masa" required></select>
 
-            <label for="relleno-torta">4. Elige el relleno:</label>
-            <select id="relleno-torta" name="relleno" required></select>
+            <label for="relleno">4. Elige el relleno:</label>
+            <select id="relleno" name="relleno" required></select>
 
-            <label for="crema-torta">5. Elige crema:</label>
-            <select id="crema-torta" name="crema" required></select>
+            <label for="crema">5. Elige crema:</label>
+            <select id="crema" name="crema" required></select>
+
+            <label for="foto">6. Subir una foto del diseño:</label>
+            <input type="file" id="foto" name="foto">
         </div>
 
-        <div id="opciones-galletas" style="display: none;">
-            <label for="sabor-galletas">2. Elige el sabor:</label>
-            <select id="sabor-galletas" name="sabor" required></select>
+        <div id="galletas-brownies-options" class="product-options">
+            <label for="cantidad">2. Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" required>
 
-            <label for="cantidad-galletas">3. Elige la cantidad:</label>
-            <select id="cantidad-galletas" name="cantidad" required></select>
+            <label for="sabor">3. Elige el sabor:</label>
+            <input type="text" id="sabor" name="sabor" required>
+
+            <label for="relleno-galletas-brownies">4. Elige el relleno:</label>
+            <input type="text" id="relleno-galletas-brownies" name="relleno" required>
         </div>
-
-        <label for="foto">Subir una foto del diseño:</label>
-        <input type="file" id="foto" name="foto">
-
+        <br>
         <button type="submit">Cotizar</button>
     </form>
 </section>
@@ -121,6 +124,6 @@
         <p>&copy; Bon Appetit - ¡Felicidad en una caja! </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

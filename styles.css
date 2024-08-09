@@ -71,14 +71,7 @@ nav a:hover {
     color: #fff;
     text-align: center;
     opacity: 0; /* Inicialmente transparente */
-    animation: fadeIn 1.5s ease-in-out forwards; /* Animación de desvanecimiento */
-}
-.separador{
-    background-color: #FC7CB8; 
-    color: #fff;
-    text-align: center;
-    opacity: 0; /* Inicialmente transparente */
-    animation: fadeIn 1.5s ease-in-out forwards; /* Animación de desvanecimiento */
+    animation: fadeIn 2s ease-in-out forwards; /* Animación de desvanecimiento */
 }
 
 
@@ -115,6 +108,7 @@ nav a:hover {
     width: 235px;
     height: 460px;
     object-fit: cover;
+    width: 100%;
     border-top-left-radius: 200px; 
     border-top-right-radius: 200px; 
 }
