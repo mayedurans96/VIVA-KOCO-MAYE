@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Appetit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Boldina:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efecto de Desvanecimiento en el Banner</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Incluye el archivo CSS con el código anterior -->
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <div class="container">
+            <img src="logo.jpg" alt="Logo de la empresa" class="logo">
+            <nav>
+                <a href="#inicio">INICIO</a>
+                <a href="#acerca">ACERCA DE</a>
+                <a href="#menu">MENÚ</a>
+                <a href="#whatsapp">COTIZAR</a>
+                <a href="https://www.instagram.com/bonappetitortas?igsh=MTlqejgyeTh3bGRjeQ==" target="_blank">INSTAGRAM</a>
+            </nav>
+        </div>
+    </header>
+    <img src="bonappetit.png" alt="bonappetit" width="100%" class="fade-in-image">
+    
+    <!-- Banner -->
+    <section id="inicio" class="banner">
+        <div class="banner-text">
+        </div>
+    </section>
+    <div class="separador">
+        <h1>🍪¡Bienvenidos a Bon Appetit!🎂</h1>
+      </div>
+      <p>Disfruta de las mejores tortas, galletas y brownies en tus celebraciones especiales</p>
+
+    <div class="separador2"></div>
+   
+    <!-- Productos -->
+    <section id="menu" class="productos">
+        <h2>Nuestros productos</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="tortas.png" alt="Tortas">
+                <h3>Tortas</h3>
+                <p>Deliciosas tortas artesanales para cualquier ocasión, elaboradas con ingredientes de primera calidad.</p>
+            </div>
+            <div class="product-item">
+                <img src="galletas.png" alt="Galletas">
+                <h3>Bon Cookies</h3>
+                <p>Galletas tipo NY crujientes por fuera y suaves por dentro, perfectas para acompañar cualquier bebida.</p>
+            </div>
+            <div class="product-item">
+                <img src="brownies.png" alt="Brownies">
+                <h3>Brownies</h3>
+                <p>Brownies melcochudos con la textura ideal y el chocolate más intenso para deleitar tu paladar.</p>
+            </div>
+        </div>
+    </section>
+
+ <!-- Cómo ordenar -->
+ <section id="whatsapp" class="ordenar">
+    <h2>Cómo ordenar</h2>
+    <h4>Recuerda hacer tu pedido con 3 días de anticipación</h4>
+
+    <form id="order-form">
+        <label for="producto">1. Elige el producto:</label>
+        <select id="producto" name="producto" required>
+            <option value="none">Seleccionar Producto</option>
+            <option value="tortas">Tortas</option>
+            <option value="galletas">Bon Cookies</option>
+        </select>
+
+        <div id="opciones-tortas" style="display: none;">
+            <label for="tamano-torta">2. Elige el tamaño:</label>
+            <select id="tamano-torta" name="tamano" required></select>
+
+            <label for="masa-torta">3. Elige el sabor de la masa:</label>
+            <select id="masa-torta" name="masa" required></select>
+
+            <label for="relleno-torta">4. Elige el relleno:</label>
+            <select id="relleno-torta" name="relleno" required></select>
+
+            <label for="crema-torta">5. Elige crema:</label>
+            <select id="crema-torta" name="crema" required></select>
+        </div>
+
+        <div id="opciones-galletas" style="display: none;">
+            <label for="sabor-galletas">2. Elige el sabor:</label>
+            <select id="sabor-galletas" name="sabor" required></select>
+
+            <label for="cantidad-galletas">3. Elige la cantidad:</label>
+            <select id="cantidad-galletas" name="cantidad" required></select>
+        </div>
+
+        <label for="foto">Subir una foto del diseño:</label>
+        <input type="file" id="foto" name="foto">
+
+        <button type="submit">Cotizar</button>
+    </form>
+</section>
+
+
+    <!-- Sección de Llamado a la Acción -->
+<section id="cta" class="cta">
+    <div class="cta-content">
+        <img src="magia.png" alt="Magia" class="cta-image">
+        <div class="cta-text">
+            <h2>(づ๑·ᴗ·๑)づ🍰</h2>
+            <h2>¿Estás listo para probar la magia hecha torta?</h2>
+            <p>Descubre nuestras tortas artesanales y déjate sorprender por su sabor único.</p>
+        </div>
+    </div>
+
+    <div class="ubica">
+        <h1>Ubicación:</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.205199528683!2d-73.12748442407971!3d7.102200892901136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f00434cadb9%3A0x81ab986e096d8f03!2sBon%20Appetit%20-%20Pasteler%C3%ADa!5e0!3m2!1ses-419!2sco!4v1723221242349!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</section>
+
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Bon Appetit - ¡Felicidad en una caja! </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
